@@ -7,6 +7,7 @@ android {
     compileSdk = 35
     ndkVersion = "27.2.12479018"
     defaultConfig {
+        externalNativeBuild { cmake { arguments += "-DANDROID_STL=c++_shared" } }
         applicationId = "dev.noizient"
         minSdk = 27
         targetSdk = 35
