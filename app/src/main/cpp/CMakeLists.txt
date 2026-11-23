@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.22)
+project(noizient LANGUAGES CXX)
+find_package(oboe REQUIRED CONFIG)
+add_library(noizient SHARED audio.cpp)
+target_compile_features(noizient PRIVATE cxx_std_17)
+target_compile_options(noizient PRIVATE -O3 -Wall -Wextra)
+target_link_libraries(noizient PRIVATE oboe::oboe android log)
